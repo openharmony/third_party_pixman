@@ -1,0 +1,88 @@
+# Copyright (C) 2018. Huawei Technologies Co., Ltd. All rights reserved.
+import ("//build/ohos.gni")
+
+## Build libpixman.so {{{
+config("libpixman_config") {
+  visibility = [ ":*" ]
+
+  include_dirs = [
+    ".",
+  ]
+
+  cflags = [
+  ]
+}
+
+config("libpixman_public_config") {
+  include_dirs = [
+    "pixman",
+  ]
+
+  cflags = [
+    "-DHAVE_CONFIG_H",
+    "-Wno-unused-parameter",
+    "-Wno-unused-variable",
+    "-Wno-unused-const-variable",
+    "-Wno-sign-compare",
+    "-Wno-missing-field-initializers",
+    "-Wno-unknown-attributes",
+    "-Wno-ignored-qualifiers",
+    "-Wno-missing-prototypes",
+    "-Wno-incompatible-pointer-types",
+    "-Wno-unused-local-typedef",
+    "-Wno-shift-negative-value",
+    "-Wno-expansion-to-defined",
+  ]
+}
+
+ohos_shared_library("libpixman") {
+  sources = [
+    "pixman/pixman.c",
+    "pixman/pixman-access.c",
+    "pixman/pixman-access-accessors.c",
+    "pixman/pixman-bits-image.c",
+    "pixman/pixman-combine32.c",
+    "pixman/pixman-combine-float.c",
+    "pixman/pixman-conical-gradient.c",
+    "pixman/pixman-filter.c",
+    "pixman/pixman-mips.c",
+    "pixman/pixman-arm.c",
+    "pixman/pixman-ppc.c",
+    "pixman/pixman-edge.c",
+    "pixman/pixman-edge-accessors.c",
+    "pixman/pixman-fast-path.c",
+    "pixman/pixman-glyph.c",
+    "pixman/pixman-general.c",
+    "pixman/pixman-gradient-walker.c",
+    "pixman/pixman-image.c",
+    "pixman/pixman-implementation.c",
+    "pixman/pixman-linear-gradient.c",
+    "pixman/pixman-matrix.c",
+    "pixman/pixman-noop.c",
+    "pixman/pixman-radial-gradient.c",
+    "pixman/pixman-region16.c",
+    "pixman/pixman-region32.c",
+    "pixman/pixman-solid-fill.c",
+    "pixman/pixman-timer.c",
+    "pixman/pixman-trap.c",
+    "pixman/pixman-utils.c",
+  ]
+
+  configs = [
+    ":libpixman_config",
+  ]
+
+  public_configs = [
+    ":libpixman_public_config",
+  ]
+
+  deps = [
+  ]
+
+  public_deps = [
+  ]
+
+  part_name = "graphic_standard"
+  subsystem_name = "graphic"
+}
+## Build libpixman.so }}}
