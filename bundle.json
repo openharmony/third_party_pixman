@@ -1,0 +1,43 @@
+{
+    "name": "@ohos/pixman",
+    "version": "",
+    "description": "Third-party open-source software pixman | 三方开源软件pixman",
+    "homePage": "https://gitee.com/openharmony",
+    "license": "MIT",
+    "repository": "https://gitee.com/openharmony/third_party_pixman",
+    "domain": "os",
+    "language": "",
+    "publishAs": "code-segment",
+    "private": false,
+    "scripts": {},
+    "tags": [
+        "third_party"
+    ],
+    "keywords": [
+        "third-party",
+        "pixman"
+    ],
+    "envs": {},
+    "dirs": {},
+    "licensePath": "COPYING",
+    "readmePath": {
+        "en": "README"
+    },
+    "segment": {
+        "destPath": "third_party/pixman"
+    },
+    "component": {
+        "name": "thirdparty_pixman",
+        "subsystem": "",
+        "syscap": [],
+        "features": [],
+        "adapted_system_type": [],
+        "rom": "",
+        "ram": "",
+        "build": {
+            "sub_component": [],
+            "inner_kits": [],
+            "test": []
+        }
+    }
+}
